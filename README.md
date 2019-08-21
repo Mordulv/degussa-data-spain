@@ -10,6 +10,16 @@ https://www.degussa-mp.es/precios
 
 ## HOW TO USE THE CODE
 
+#### Save the data in a txt 
+
 To obtain a DataFrame and save the information in a txt, you will only have to execute this line of code: 
 
-`Degussa().get_data()`
+`Degussa().save_data()`
+
+#### Get the date and the DataFrame 
+
+To obtain the date and the DataFrame of Degussa's data you only have to write the following line of code:
+
+`date, data = Degussa().get_data()`
+
+This way, "date" will be the last date of update and "data" will be the DataFrame that contains all the information. 
