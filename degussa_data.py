@@ -118,3 +118,19 @@ class Degussa():
         data.columns = ['Code', 'Name', 'selling price', 'purchase price']
 
         return date, data
+
+    def save_data(self):
+
+        '''
+
+        Descripcion:
+        ------------
+
+        Funcion que guarda la informacion descargada
+
+        '''
+
+        date, data = self.get_data()
+        
+        date = date.split('Lista de precios ')[1].replace(', ','-').replace('  ','').replace(':','-')
+        data.to_csv( date + '.txt',sep=';')
