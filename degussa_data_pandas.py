@@ -7,7 +7,7 @@ class Degussa():
 
         self.path = "https://www.degussa-mp.es/precios"
     
-    def data(self):
+    def get_data(self):
 
         data = concat(read_html(self.path))
 
@@ -32,5 +32,5 @@ class Degussa():
         if time_name:
             name = strftime("%Y-%m-%d %H-%M-%S", gmtime()) + ".txt"
 
-        data = self.data()
+        data = self.get_data()
         data.to_csv(name, sep=";", decimal=decimal)
